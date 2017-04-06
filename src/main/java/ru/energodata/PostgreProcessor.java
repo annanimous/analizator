@@ -20,7 +20,7 @@ class PostgreProcessor {
         Class.forName("org.postgresql.Driver");
         //con = DriverManager.getConnection("jdbc:postgresql://" + postgreHost + ':' + postgrePort + '/' + databaseName, postgreUser, postgrePassword);
         PGPoolingDataSource source = new PGPoolingDataSource();
-        source.setDataSourceName(config.getPostgrePassword());
+        source.setDataSourceName(config.getPostgreDataSourceName());
         source.setServerName(config.getPostgreHost());
         source.setDatabaseName(config.getPostgreDatabaseName());
         source.setUser(config.getPostgreUser());

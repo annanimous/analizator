@@ -16,6 +16,7 @@ class Config {
     private String postgreUser;
     private String postgrePassword;
     private String postgreDatabaseName;
+    private String postgreDataSourceName;
     private int postgreMaxConnections;
     //Proxy settings
     private String proxyHost;
@@ -42,6 +43,8 @@ class Config {
     }
 
     public int getPostgreMaxConnections() { return postgreMaxConnections; }
+
+    public String getPostgreDataSourceName() { return postgreDataSourceName; }
 
     public File getPostgreBinDir() {
         return postgreBinDir;
@@ -91,6 +94,9 @@ class Config {
                             case "postgreMaxConnections":
                                 postgreMaxConnections = Integer.parseInt(value);
                                 break;
+                            case "postgreDataSourceName":
+                                postgreDataSourceName = value;
+                                break;
                             case "proxyHost":
                                 proxyHost = value;
                                 break;
@@ -103,4 +109,6 @@ class Config {
             }
         }
     }
+
+
 }

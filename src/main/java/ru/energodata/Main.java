@@ -32,29 +32,13 @@
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
     }
-
             private static void compareIndexes(Config config) throws IOException, SQLException, ClassNotFoundException {
                 PostgreProcessor processor = new PostgreProcessor();
                 processor.initialize(config);
                 for (i = 1; i < strokaList.size(); i++ ) {
-                    /*class MyRunnable implements Runnable
-                    {
-                        @Override
-                        public void run() {
-                            try {*/
-                                compareRunnable(i, processor);/*
-                            } catch ( SQLException | ClassNotFoundException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                    ExecutorService tasker = Executors.newFixedThreadPool(8);
-                    for(int j = 0; j < 2; j++){ // t is time interval
-                        tasker.execute(new MyRunnable());
-                    }*/
+                compareRunnable(i, processor);
                 }
                 processor.deinitialize();
             }
